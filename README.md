@@ -14,6 +14,7 @@ identified_objects = [
     "Ketchup",
 
 ]
+
 Object chosen is Macaroni and Cheese
 <img width="389" height="227" alt="image" src="https://github.com/user-attachments/assets/cf24e8c8-afde-425f-9741-36b0d74f2fda" />
 
@@ -23,7 +24,9 @@ axis-aligned bounding box (AABB) of every vertex in the mesh: for each of the th
 
 # B: 
 clicked pixel coordinates:
+  
   corner 0: (867.0, 472.0)
+  
   corner 1: (962.0, 894.0)
   corner 2: (1310.0, 814.0)
   corner 3: (1167.0, 415.0)
