@@ -86,21 +86,33 @@ Now for the Mast3r matching the points do not match entirely on the object betwe
 
 # A: 
 Raw reciprocal NN matches: 32
+
 <img width="737" height="236" alt="image" src="https://github.com/user-attachments/assets/59bc6d42-3f87-4cd3-a993-c01dace987be" />
 
 # B+C: 
+
 Matches with valid template depth: 29 / 32
+
 Inliers: 14 / 29
+
 R (Task 4) =
+
  [[-0.4871  0.8717 -0.0525]
+ 
  [ 0.0968 -0.0058 -0.9953]
+ 
  [-0.8679 -0.4899 -0.0816]]
+
 t (Task 4) = [  -0.84 -113.27  163.26] mm
+
 Inlier reprojection error: mean 3.205 px, median 3.141 px
 
 --- Task 4 (MASt3R+RANSAC) vs Task 3 (hand-matched PnP) ---
+
 Rotation diff: 165.169 deg | Translation diff: 656.51 mm
+
 (Extra) vs Task 2: 92.637 deg, 359.66 mm
+
 Points used -> Task 3: 6 | Task 4: 29 fed to RANSAC, 14 inliers
 
 Scene matches inside projected silhouette: all 82.8% | inliers 92.9%
