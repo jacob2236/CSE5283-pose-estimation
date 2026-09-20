@@ -60,9 +60,13 @@ t (tau) =
  [-38.0876 -19.719  540.6653]
 
 # D:
+
  ||M^T M - I||_F (raw M, before orthonormalization) = 0.035364
+
 det(M) (raw M, before orthonormalization)           = 0.999664
+
 ||M - R||_F (after SVD correction)                  = 0.017682
+
  The small value of ‖M − R‖_F = 0.0177 indicates that my four clicked corner points were geometrically consistent and accurately localized, since a nearly-rigid raw estimate (needing only a tiny SVD correction to become a true rotation) is what you'd expect from clean, precise correspondences rather than noisy or mislabeled clicks.
 
 # E:
