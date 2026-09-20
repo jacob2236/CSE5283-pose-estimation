@@ -36,16 +36,27 @@ clicked pixel coordinates:
   <img width="458" height="273" alt="image" src="https://github.com/user-attachments/assets/dbafb495-17c3-4b42-8bf6-5baf339636b4" />
 
 # C: 
+
 H =
+
  [[ 2.6908e+00 -2.9260e-01  8.6700e+02]
+ 
  [-3.6840e-01  1.7353e+00  4.7200e+02]
+ 
  [ 2.0000e-04 -9.0000e-04  1.0000e+00]]
+
 lambda = 540.665267
+
 R (Omega) =
+
  [[ 0.9745  0.2239 -0.0123]
+ 
  [-0.1887  0.8486  0.4943]
+ 
  [ 0.1211 -0.4794  0.8692]]
+
 t (tau) =
+
  [-38.0876 -19.719  540.6653]
 
 # D:
