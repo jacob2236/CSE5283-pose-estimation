@@ -28,8 +28,11 @@ clicked pixel coordinates:
   corner 0: (867.0, 472.0)
   
   corner 1: (962.0, 894.0)
+  
   corner 2: (1310.0, 814.0)
+  
   corner 3: (1167.0, 415.0)
+  
   <img width="458" height="273" alt="image" src="https://github.com/user-attachments/assets/dbafb495-17c3-4b42-8bf6-5baf339636b4" />
 
 # C: 
