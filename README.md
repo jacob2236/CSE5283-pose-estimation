@@ -70,12 +70,19 @@ det(M) (raw M, before orthonormalization)           = 0.999664
  The small value of ‖M − R‖_F = 0.0177 indicates that my four clicked corner points were geometrically consistent and accurately localized, since a nearly-rigid raw estimate (needing only a tiny SVD correction to become a true rotation) is what you'd expect from clean, precise correspondences rather than noisy or mislabeled clicks.
 
 # E:
+
 corner 0: reprojected=(867.0,472.0)  clicked=(867.0,472.0)  error=0.00px
+
 corner 1: reprojected=(962.3,887.7)  clicked=(962.0,894.0)  error=6.26px
+
 corner 2: reprojected=(1314.1,808.4)  clicked=(1310.0,814.0)  error=6.97px
+
 corner 3: reprojected=(1170.9,415.2)  clicked=(1167.0,415.0)  error=3.87px
+
 mean reprojection error: 4.28 px
+
 So the mesh lines up on top the object box in the image. This is directly the face I chose to click the 4 corners on.
+
 <img width="461" height="282" alt="image" src="https://github.com/user-attachments/assets/e5ffbff9-0c6b-4282-89e3-dbe33b8b0091" />
 
 
@@ -107,7 +114,7 @@ t (Task 4) = [  -0.84 -113.27  163.26] mm
 
 Inlier reprojection error: mean 3.205 px, median 3.141 px
 
---- Task 4 (MASt3R+RANSAC) vs Task 3 (hand-matched PnP) ---
+# --- Task 4 (MASt3R+RANSAC) vs Task 3 (hand-matched PnP) ---
 
 Rotation diff: 165.169 deg | Translation diff: 656.51 mm
 
