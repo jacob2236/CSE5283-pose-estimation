@@ -36,6 +36,7 @@ clicked pixel coordinates:
   
   <img width="458" height="273" alt="image" src="https://github.com/user-attachments/assets/dbafb495-17c3-4b42-8bf6-5baf339636b4" />
 
+My maually selected points in the image
 # C: 
 
 H =
