@@ -87,7 +87,7 @@ So the mesh lines up on top the object box in the image. This is directly the fa
 
 <img width="461" height="282" alt="image" src="https://github.com/user-attachments/assets/e5ffbff9-0c6b-4282-89e3-dbe33b8b0091" />
 
-
+Reprojected mesh on top of the selected points in the image
 ## TASK 3:
 
 ## TASK 4:
