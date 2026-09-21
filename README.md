@@ -16,6 +16,7 @@ identified_objects = [
 ]
 
 Object chosen is Macaroni and Cheese
+
 <img width="389" height="227" alt="image" src="https://github.com/user-attachments/assets/cf24e8c8-afde-425f-9741-36b0d74f2fda" />
 
 ## TASK 2:
