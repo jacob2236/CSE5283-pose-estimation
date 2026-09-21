@@ -90,6 +90,79 @@ So the mesh lines up on top the object box in the image. This is directly the fa
 Reprojected mesh on top of the selected points in the image
 ## TASK 3:
 
+# A:
+
+<img width="700" height="299" alt="image" src="https://github.com/user-attachments/assets/c13f1436-4a7a-416e-93a8-c41f186f38b3" />
+
+Template render of mesh and depth map of mesh
+
+# B:
+
+Idx | Template Render (u, v) |     Scene Photo (u, v)
+
+-------------------------------------------------------
+
+  0 | ( 753.71,  262.90)       | ( 867.00,  472.00)   [Automated Corner]
+  
+  1 | ( 722.88,  812.14)       | ( 962.00,  894.00)   [Automated Corner]
+  
+  2 | (1186.30,  799.44)       | (1310.00,  814.00)   [Automated Corner]
+  
+  3 | (1155.64,  207.07)       | (1167.00,  415.00)   [Automated Corner]
+  
+  4 | (1210.96,  825.90)       | (1290.00,  850.00)   [Manual Feature]
+  
+  5 | ( 750.82,  840.14)       | ( 959.00,  919.00)   [Manual Feature]
+
+<img width="721" height="216" alt="image" src="https://github.com/user-attachments/assets/1a6276aa-f0f4-45eb-b2ad-3b895a7777a4" />
+
+Mathcing the selected points from the template in 3D to the real image with 6 points, 4 on one plane and the 5 + 6 on a second plane
+
+# C:
+--- 3 Unprojected Template Camera Points (X_cam) ---
+
+Point 0: X_cam = [-61.34, -75.60, 403.75] (units: mm)
+
+Point 1: X_cam = [-61.55, 73.81, 353.57] (units: mm)
+
+Point 2: X_cam = [51.67, 64.79, 324.59] (units: mm)
+
+Units Confirmation: Millimeters (inherited from mesh_t2 vertex definitions and depth rasterization).
+
+# D:
+Recovered R (PnP) =
+
+ [[-0.0886 -0.9677  0.2362]
+ 
+ [-0.1778  0.2487  0.9521]
+ 
+ [-0.9801  0.0424 -0.1941]]
+
+Recovered t (PnP) =
+
+ [ -38.2484  -40.8493 -488.1723] (mm)
+
+Mean Reprojection Error: 9.479 px
+
+# E:
+The mesh seems to fit very well towards the bottom of the object where I was able to select 2 additional points on a different plane than the rest of the points, giving that accurate depth and 3D matching. But is a little off towards the top right corner, almost making the mesh look like it is closer to the camera than the real box. This most likely happens because of the fact there is only one plane depctied in the points chosen towards this edge of the box object.
+
+<img width="554" height="319" alt="image" src="https://github.com/user-attachments/assets/b50af14b-d9d2-497f-ac83-797635c12413" />
+
+3D repojection of mesh onto the real image.
+
+# F:
+--- Comparison of Task 2 (Homography) vs Task 3 (PnP) ---
+
+Rotation difference angle: 180.000 degrees (3.1416 rad)
+
+Translation difference:    984.70 mm
+
+t (Task 2 aligned): [ 40.95  29.24 490.83]
+
+t (Task 3 PnP):     [ -38.25  -40.85 -488.17]
+
+They do not agree. While the magnitudes of the translations are nearly identical ($\approx 493\text{ mm}$ from the camera), the two estimated poses are in direct physical contradiction due to a complete sign/orientation reversal. Both methods captured the correct geometric line of sight, but Task 3 converged to the geometrically flipped/reflected dual solution of the camera projection equations rather than the physically valid front-facing pose.
 ## TASK 4:
 Now for the Mast3r matching the points do not match entirely on the object between the two images, here is a possible cause: While MASt3R extracted 29 candidate correspondences with valid depth on the template render, the recovered pose diverged dramatically from the ground truth Task 3 pose ($\Delta \theta = 165.17^\circ$, $\Delta t = 656.51\text{ mm}$).This failure is driven by the severe synthetic-to-real domain gap:Lack of Surface Texture: The CAD template uses flat-shaded polygon rasterization without packaging graphics or text, while the photograph is dominated by high-frequency brand typography and reflections. With no identifiable interior features on the template, MASt3R could only generate 32 raw matches, compared to the hundreds typical of textured scenes.Edge Misalignment & Planar Ambiguity: Without surface descriptors, the matcher latched onto the high-contrast silhouette boundary of the CAD render. Due to the two-fold symmetry of the rectangular box, the matches inverted the orientation, resulting in a near-$180^\circ$ rotation discrepancy ($165.17^\circ$).Degenerate RANSAC Consensus: Although 14 points were flagged as inliers with a low reprojection error ($3.21\text{ px}$), these points formed a spurious coplanar consensus on background/edge clutter, forcing PnP to converge to an impossible camera depth ($t_z \approx 163\text{ mm}$) and placing the object over half a meter away from its true 3D position.
 
